@@ -96,13 +96,13 @@ void leds_init(void){
 static uint8_t get_protocol_eq(uint8_t data, int pos){
   uint8_t eq = 0;
   if (data & (1 << (2*(3-pos))))
-    eq = 0b0001;
+    eq = 0b1110;
   else
-    eq = 0b0111;
+    eq = 0b1000;
   if (data & (2 << (2*(3-pos))))
-    eq += 0b00010000;
+    eq += 0b11100000;
   else
-    eq += 0b01110000;
+    eq += 0b10000000;
   return eq;
 }
 
