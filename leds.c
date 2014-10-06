@@ -77,7 +77,7 @@ static const SPIConfig spicfg = {
  */
 void leds_init(void){
   for(int i = 0; i < RESET_SIZE; i++)
-    txbuf[DATA_SIZE+i] = 0xff;
+    txbuf[DATA_SIZE+i] = 0x00;
   spiAcquireBus(&LEDS_SPI);              /* Acquire ownership of the bus.    */
   spiStart(&LEDS_SPI, &spicfg);          /* Setup transfer parameters.       */
   spiSelect(&LEDS_SPI);                  /* Slave Select assertion.          */
